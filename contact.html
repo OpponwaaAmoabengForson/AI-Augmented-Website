@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | The Akili Foundation</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+<body>
+
+    <header class="navbar">
+        <div class="logo"><h2>THE AKILI FOUNDATION</h2></div>
+        <nav class="nav-links">
+            <a href="index.html" id="nav-home">Home</a>
+            <a href="team.html" id="nav-team">Team</a>
+            <a href="programs.html" id="nav-programs">Programs</a>
+            <a href="media.html" id="nav-media">Media</a>
+            <a href="contact.html" id="nav-contact">Contact Us</a>
+            <a href="donate.html" class="btn-donate">DONATE</a>
+        </nav>
+    </header>
+
+    <section class="page-header">
+        <div class="container">
+            <h1>Get In Touch</h1>
+            <p>Have questions, ideas, or want to partner with us? We would love to hear from you.</p>
+        </div>
+    </section>
+
+    <section class="contact-section">
+        <div class="container contact-grid">
+            
+            <div class="contact-form-container">
+                <h2>Send Us A Message</h2>
+                <form id="contact-form" class="standard-form">
+                    <input type="text" id="user_name" placeholder="Your Name" required>
+                    <input type="email" id="user_email" placeholder="Your Email" required>
+                    <input type="text" id="subject" placeholder="Subject" required>
+                    <textarea id="message" rows="5" placeholder="How can we help?" required></textarea>
+                    <button type="submit" class="btn-primary">Send Message</button>
+                </form>
+            </div>
+
+            <div class="contact-info-container">
+                <h2>Direct Contact</h2>
+                <p>Prefer to reach out directly? Use our contact details below.</p>
+                
+                <div class="info-item">
+                    <i class="fa-solid fa-envelope"></i>
+                    <p>info@akilifoundation.org</p>
+                </div>
+                
+                <div class="info-item">
+                    <i class="fa-solid fa-phone"></i>
+                    <p>+233 12 345 6789</p>
+                </div>
+
+                <div class="whatsapp-box">
+                    <p>Need a quick response?</p>
+                    <a href="https://wa.me/233123456789" target="_blank" class="btn-whatsapp">
+                        <i class="fa-brands fa-whatsapp"></i> Chat on WhatsApp
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-about">
+                <h3>The Akili Foundation</h3>
+                <p>Empowering minds, transforming communities.</p>
+            </div>
+            
+            <div class="footer-contact">
+                <h4>Contact Info</h4>
+                <p><i class="fa-solid fa-envelope"></i> info@akilifoundation.org</p>
+                <p><i class="fa-brands fa-whatsapp"></i> +233 12 345 6789</p>
+            </div>
+
+            <div class="footer-socials">
+                <h4>Connect With Us</h4>
+                <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+                <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+                <a href="#"><i class="fa-brands fa-tiktok"></i></a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 The Akili Foundation. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script type="text/javascript">
+   (function(){
+      // Replace 'YOUR_PUBLIC_KEY' with the key you copied from your EmailJS dashboard
+      emailjs.init("YOUR_PUBLIC_KEY"); 
+   })();
+</script>
+    <script src="script.js"></script>
+</body>
+</html>
