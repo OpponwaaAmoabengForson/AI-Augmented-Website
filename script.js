@@ -22,7 +22,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // --- 2. HERO SECTION AUTO-SLIDESHOW ---
     const heroSection = document.querySelector('.hero-section');
-    const sliderImages = ["78.jpg", "26.jpg", "39.jpg"];
+    const sliderImages = ["images/78.jpg", "images/26.jpg", "images/39.jpg"];
     
     if (heroSection) {
         let currentHeroIndex = 0;
