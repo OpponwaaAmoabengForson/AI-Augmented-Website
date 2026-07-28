@@ -63,9 +63,9 @@
             <p>Join the movement. Fill out the form below and we will reach out to you.</p>
             
             <form id="contact-form" class="standard-form">
-                <input type="text" placeholder="Full Name" required>
-                <input type="email" placeholder="Email Address" required>
-                <input type="text" placeholder="Phone / WhatsApp Number" required>
+                <input type="text"  name="name" placeholder="Full Name" required>
+                <input type="email" name="email" placeholder="Email Address" required>
+                <input type="text" name="phone" placeholder="Phone / WhatsApp Number" required>
                 <button type="submit" class="btn-primary">Submit Application</button>
             </form>
         </div>
@@ -96,6 +96,14 @@
             <p>&copy; 2026 The Akili Foundation. All Rights Reserved.</p>
         </div>
     </footer>
+
+     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script type="text/javascript">
+   (function(){
+      // Replace 'YOUR_PUBLIC_KEY' with the key you copied from your EmailJS dashboard
+      emailjs.init("A7mIJV-ZaeFYwtFVa"); 
+   })();
+</script>
 
     <script src="script.js"></script>
 </body>
