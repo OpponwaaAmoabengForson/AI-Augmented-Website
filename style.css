@@ -143,7 +143,7 @@ h1, h2, h3, h4 {
    ========================================= */
 .hero-section {
     position: relative;
-    background-image: url('78.jpg'); /* Starts with your first working image */
+    background-image: url('images/78.jpg'); /* Starts with your first working image */
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
