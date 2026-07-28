@@ -38,7 +38,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }, 5000); 
     }
 
-    // --- 3. CONTACT FORM HANDLING ---
+    // --- 3. CONTACT FORM HANDLING (EMAILJS) ---
     const contactForm = document.getElementById("contact-form");
     
     if (contactForm) {
@@ -48,9 +48,17 @@ document.addEventListener("DOMContentLoaded", () => {
             const btn = contactForm.querySelector('button');
             btn.textContent = 'Sending...';
 
-            alert("Form submitted! (Add EmailJS keys in script.js to activate)");
-            btn.textContent = 'Send Message';
-            contactForm.reset();
+            // Replace YOUR_SERVICE_ID and YOUR_TEMPLATE_ID with your actual keys from EmailJS
+            emailjs.sendForm('service_4zqen4o', 'template_x4xyh6b', this)
+                .then(() => {
+                    btn.textContent = 'Send Message';
+                    alert("Message sent successfully!");
+                    contactForm.reset();
+                }, (error) => {
+                    btn.textContent = 'Send Message';
+                    alert("Failed to send message. Please try again.");
+                    console.error('EmailJS Error:', error);
+                });
         });
     }
 
@@ -78,10 +86,9 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 });
 
-// --- 5. SMART DELAYED PRELOADER (FIXES NAV LAG) ---
-// This waits until the page is 100% loaded before downloading background assets
+// --- 5. SMART DELAYED PRELOADER ---
 window.addEventListener("load", () => {
-    const imagesToPreload = ["78.jpg", "26.jpg", "39.jpg"];
+    const imagesToPreload = ["images/78.jpg", "images/26.jpg", "images/39.jpg"];
     imagesToPreload.forEach(imageSrc => {
         const imgPreloader = new Image();
         imgPreloader.src = imageSrc;
