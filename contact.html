@@ -31,37 +31,83 @@
     <section class="contact-section">
         <div class="container contact-grid">
             
-            <div class="contact-form-container">
+            <div class="contact-card">
                 <h2>Send Us A Message</h2>
+                <p class="section-subtext">Have questions or want to donate items? Fill out the form below.</p>
+                
                 <form id="contact-form" class="standard-form">
-                    <input type="text" id="user_name" name="name" placeholder="Your Name" required>
-                    <input type="email" id="user_email" name="email" placeholder="Your Email" required>
-                    <input type="text" id="subject" name="subject" placeholder="Subject" required>
-                    <textarea id="message" name="message" rows="5" placeholder="How can we help?" required></textarea>
-                    <button type="submit" class="btn-primary">Send Message</button>
+                    <div class="form-group">
+                        <label for="user_name">Full Name</label>
+                        <input type="text" id="user_name" name="name" placeholder="e.g. Kwame Mensah" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="user_email">Email Address</label>
+                        <input type="email" id="user_email" name="email" placeholder="e.g. kwame@gmail.com" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phone">Phone / WhatsApp Number</label>
+                        <input type="tel" id="phone" name="phone" placeholder="+233 xx xxx xxxx" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="subject">What is this regarding?</label>
+                        <select id="subject" name="subject" required>
+                            <option value="" disabled selected>Select an Inquiry Type</option>
+                            <option value="Physical Item Donation">📦 Physical Item Donation (Books, Tech, STEM)</option>
+                            <option value="Partnership & Sponsorship">🤝 Partnership & Sponsorship</option>
+                            <option value="Programs & Workshops">🎓 Programs & Workshops</option>
+                            <option value="General Inquiry">❓ General Inquiry / Questions</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">Message / Details</label>
+                        <textarea id="message" name="message" rows="4" placeholder="How can we help? (If donating items, please list them here along with your preferred location in Accra)..." required></textarea>
+                    </div>
+
+                    <button type="submit" class="btn-primary form-submit-btn">Send Message</button>
                 </form>
             </div>
 
             <div class="contact-info-container">
-                <h2>Direct Contact</h2>
-                <p>Prefer to reach out directly? Use our contact details below.</p>
                 
-                <div class="info-item">
-                    <i class="fa-solid fa-envelope"></i>
-                    <p>info@akilifoundation.org</p>
-                </div>
-                
-                <div class="info-item">
-                    <i class="fa-solid fa-phone"></i>
-                    <p>+233 12 345 6789</p>
+                <div class="info-card">
+                    <div class="info-icon">
+                        <i class="fa-solid fa-envelope"></i>
+                    </div>
+                    <div class="info-content">
+                        <h4>Email Us</h4>
+                        <p class="info-main">info@akilifoundation.org</p>
+                        <p class="info-sub">For official inquiries, proposals & partnerships. We reply within 24 hours.</p>
+                    </div>
                 </div>
 
-                <div class="whatsapp-box">
-                    <p>Need a quick response?</p>
-                    <a href="https://wa.me/233123456789" target="_blank" class="btn-whatsapp">
-                        <i class="fa-brands fa-whatsapp"></i> Chat on WhatsApp
-                    </a>
+                <div class="info-card highlight-card">
+                    <div class="info-icon green-icon">
+                        <i class="fa-brands fa-whatsapp"></i>
+                    </div>
+                    <div class="info-content">
+                        <h4>WhatsApp Hotline</h4>
+                        <p class="info-main">+233 12 345 6789</p>
+                        <p class="info-sub">Quickest route for item donation logistics & immediate support.</p>
+                        <a href="https://wa.me/233123456789" target="_blank" class="btn-whatsapp">
+                            <i class="fa-brands fa-whatsapp"></i> Chat on WhatsApp
+                        </a>
+                    </div>
                 </div>
+
+                <div class="info-card">
+                    <div class="info-icon blue-icon">
+                        <i class="fa-solid fa-location-dot"></i>
+                    </div>
+                    <div class="info-content">
+                        <h4>Location & Logistics</h4>
+                        <p class="info-main">Greater Accra, Ghana</p><p class="info-sub">We do not have a walk-in physical office yet—we arrange scheduled pick-ups and meetups for item donations!</p>
+                    </div>
+                </div>
+
             </div>
 
         </div>
