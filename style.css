@@ -2131,3 +2131,87 @@ body {
         display: flex;
     }
 }
+
+/* Full-Width Edge-to-Edge Impact Counter Section Band */
+.impact-counter-section {
+    width: 100%;
+    background-color: #f0fdf4; /* Edge-to-edge light green background */
+    border-top: 1px solid #bbf7d0;
+    border-bottom: 1px solid #bbf7d0;
+    padding: 50px 20px;
+    text-align: center;
+}
+
+/* Inner Centered Content Box */
+.impact-content {
+    max-width: 580px;
+    margin: 0 auto;
+}
+
+.impact-content h2 {
+    font-size: 1.8rem;
+    color: #0f172a;
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+.impact-content .subtitle {
+    color: #475569;
+    font-size: 0.95rem;
+    max-width: 480px;
+    margin: 0 auto 30px auto;
+    line-height: 1.5;
+}
+
+/* 3-Column Grid for Top Stats */
+.counter-row.three-cols {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    margin-bottom: 25px;
+}
+
+/* Inner White Stat Cards */
+.stat-box {
+    background-color: #ffffff;
+    border-radius: 14px;
+    padding: 16px 8px;
+    border: 1px solid #dcfce7;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+}
+
+.stat-box.full-width {
+    width: 100%;
+    max-width: 280px;
+    padding: 16px 20px;
+}
+
+/* Green Highlight Numbers */
+.stat-box h3 {
+    font-size: 2.1rem;
+    font-weight: 800;
+    color: #22c55e;
+    margin: 0;
+    line-height: 1.1;
+}
+
+.stat-box p {
+    font-size: 0.95rem;
+    color: #64748b;
+    margin-top: 4px;
+    font-weight: 500;
+}
+
+/* Vertical Icon Groups */
+.counter-group {
+    margin-top: 25px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.impact-icon {
+    font-size: 2.8rem;
+    color: #22c55e;
+}
