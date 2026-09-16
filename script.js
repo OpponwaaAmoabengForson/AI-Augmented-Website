@@ -109,3 +109,48 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
 });
+
+document.addEventListener('DOMContentLoaded', () => {
+    const counters = document.querySelectorAll('.counter');
+
+    const animateCounter = (counter) => {
+        const target = +counter.getAttribute('data-target');
+        
+        // If the value is 0, display 0 directly without animating
+        if (target === 0) {
+            counter.innerText = '0';
+            return;
+        }
+
+        const duration = 1500; // Animation duration in milliseconds (1.5 seconds)
+        const frameDuration = 1000 / 60;
+        const totalFrames = Math.round(duration / frameDuration);
+        let frame = 0;
+
+        const timer = setInterval(() => {
+            frame++;
+            const progress = frame / totalFrames;
+            // Smooth ease-out curve
+            const currentCount = Math.round(target * (1 - Math.pow(1 - progress, 3)));
+
+            counter.innerText = currentCount;
+
+            if (frame === totalFrames) {
+                counter.innerText = target;
+                clearInterval(timer);
+            }
+        }, frameDuration);
+    };
+
+    // Trigger count animation when scrolled into view
+    const observer = new IntersectionObserver((entries, observerInstance) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                animateCounter(entry.target);
+                observerInstance.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.3 });
+
+    counters.forEach(counter => observer.observe(counter));
+});
