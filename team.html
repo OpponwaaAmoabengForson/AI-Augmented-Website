@@ -38,6 +38,9 @@
                 <div class="profile-card">
                     <img src="images/jull.jpg" alt="Godwin France">
                     <h3>Godwin France</h3>
+                    <button type="button" class="see-bio-btn" data-bio="godwin">
+    See Bio
+</button>
                     <p class="role">Executive Director (Founder)</p>
                     <a href="https://linkedin.com/in/YOUR-URL" target="_blank" class="linkedin-link"><i class="fa-brands fa-linkedin"></i></a>
                 </div>
@@ -45,6 +48,9 @@
                 <div class="profile-card">
                     <img src="images/39.jpg" alt="Christian Tetteh">
                     <h3>Christian Tetteh</h3>
+                    <button type="button" class="see-bio-btn" data-bio="christian">
+    See Bio
+</button>
                     <p class="role">Executive Director</p>
                     <a href="https://linkedin.com/in/YOUR-URL" target="_blank" class="linkedin-link"><i class="fa-brands fa-linkedin"></i></a>
                 </div>
@@ -52,6 +58,9 @@
                 <div class="profile-card">
                     <img src="images/78.jpg" alt="Martina Johnson">
                     <h3>Martina Johnson </h3>
+                    <button type="button" class="see-bio-btn" data-bio="martina">
+    See Bio
+</button>
                     <p class="role">Secretary</p>
                     <a href="https://linkedin.com/in/YOUR-URL" target="_blank" class="linkedin-link"><i class="fa-brands fa-linkedin"></i></a>
                 </div>
@@ -59,6 +68,10 @@
                 <div class="profile-card">
                     <img src="images/26.jpg" alt="Oluwatoyin Opeodu">
                     <h3>Oluwatoyin Opeodu</h3>
+                  
+<button type="button" class="see-bio-btn" data-bio="oluwatoyin">
+    See Bio
+</button>
                     <p class="role">Organization Advisor (Digital content/Social Media  Advisor)</p>
                     <a href="https://linkedin.com/in/YOUR-URL" target="_blank" class="linkedin-link"><i class="fa-brands fa-linkedin"></i></a>
                 </div>
@@ -101,6 +114,20 @@
             <p>&copy; 2026 The Akili Foundation. All Rights Reserved.</p>
         </div>
     </footer>
+
+
+<div class="bio-overlay" id="bioOverlay" hidden>
+    <div class="bio-modal" role="dialog" aria-modal="true"
+         aria-labelledby="bioTitle" aria-describedby="bioText">
+        <button class="bio-close" id="bioClose"
+                type="button" aria-label="Close biography">
+            &times;
+        </button>
+        <h2 id="bioTitle"></h2>
+        <p id="bioText"></p>
+    </div>
+</div>
+
 
     <script src="script.js"></script>
 

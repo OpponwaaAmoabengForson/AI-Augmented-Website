@@ -154,3 +154,86 @@ document.addEventListener('DOMContentLoaded', () => {
 
     counters.forEach(counter => observer.observe(counter));
 });
+
+/* TEAM BIOGRAPHY POPUPS */
+document.addEventListener("DOMContentLoaded", () => {
+    const biographies = {
+        godwin: {
+            title: "Godwin France's Bio",
+            text: "Godwin is our Project Lead; he has been with the team since 2017 as a Product Developer. He loves curating STEM content and working with kids. His expertise cuts across AI & Machine Learning, Web3 Technologies, and experimenting with emerging technologies."
+        },
+        christian: {
+            title: "Christian Tetteh's Bio",
+            text: "International trainer/facilitator, talent acquisition and management specialist, people performance strategist, learning & development specialist, leadership development, soft skill trainer, entrepreneurial startup champion."
+        },
+        martina: {
+            title: "Martina Johnson's Bio",
+            text: "A highly competent professional with 2+ years work experience within the public, commercial and financial sector. Possesses excellent knowledge of dealing with customers/clients - both face-to-face and over the phone, goal-oriented and commercially aware."
+        },
+        oluwatoyin: {
+            title: "Oluwatoyin Opeodu's Bio",
+            text: "I am passionate about God, creativity and social media marketing. Recipient of Sprout Social's Always on Award (Global Top 5). I am Hubspot certified for social media, inbound and content marketing. META certified for Facebook and Instagram advertising. Managed and grown several multinational brands on social media. Masterclass facilitator at Social Media Week Accra 2019. I have worked with brands in various industries including fintech, banking, FMCG, fashion, cryptocurrency, food, television service, telecommunication, banking and ride-hailing. I train. I speak. I consult. I am the Social Media Catalyst, let's blow up campaigns together."
+        },
+        matthew: {
+            title: "Matthew Godwin's Bio",
+            text: "Matthew is a volunteer Software Developer at The Akili Foundation. He has an interest in technology, digital innovation and using his skills to support educational and community projects."
+        },
+        linda: {
+            title: "Linda Mensah's Bio",
+            text: "Linda is a volunteer Writer at The Akili Foundation. She enjoys creating meaningful content and supporting communication activities that help share the foundation's programmes, stories and community impact."
+        },
+        jordon: {
+            title: "Jordon Aryeetey's Bio",
+            text: "Jordon is a volunteer Graphic Designer at The Akili Foundation. He is interested in creative design, visual storytelling and producing engaging materials that support the foundation's educational and community initiatives."
+        }
+    };
+
+    const overlay = document.getElementById("bioOverlay");
+    const closeButton = document.getElementById("bioClose");
+    const title = document.getElementById("bioTitle");
+    const text = document.getElementById("bioText");
+    const buttons = document.querySelectorAll(".see-bio-btn");
+
+    if (!overlay || !closeButton || !title || !text) return;
+
+    let previousFocus = null;
+
+    function closeBio() {
+        overlay.hidden = true;
+        document.body.style.overflow = "";
+        if (previousFocus) previousFocus.focus();
+    }
+
+    buttons.forEach(button => {
+        button.addEventListener("click", () => {
+            const bio = biographies[button.dataset.bio];
+            if (!bio) return;
+
+            previousFocus = document.activeElement;
+            title.textContent = bio.title;
+            text.textContent = bio.text;
+            overlay.hidden = false;
+            document.body.style.overflow = "hidden";
+            closeButton.focus();
+        });
+    });
+
+    closeButton.addEventListener("click", closeBio);
+
+    overlay.addEventListener("click", event => {
+        if (event.target === overlay) closeBio();
+    });
+
+    document.addEventListener("keydown", event => {
+        if (overlay.hidden) return;
+
+        if (event.key === "Escape") {
+            closeBio();
+        }
+
+        if (event.key === "Tab") {
+            event.preventDefault();
+            closeButton.focus();
+        }
+    });
+});
