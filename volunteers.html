@@ -101,28 +101,30 @@
                         <input type="tel" id="phone" name="phone" placeholder="+233 xx xxx xxxx" required>
                     </div>
 
-                    <div class="form-group">
-                        <label for="role">I Want to Join As</label>
-                        <select id="role" name="role" required>
-                            <option value="" disabled selected>Select Role</option>
-                            <option value="Volunteer">Volunteer</option>
-                            <option value="Mentor">Mentor</option>
-                            <option value="Both">Both / Open to Anything</option>
-                        </select>
-                    </div>
+                    
+<div class="form-group">
+    <label for="role">Select Volunteer Role</label>
+    <select id="role" name="role" required>
+        <option value="" disabled selected>Select Role</option>
+        <option value="Android Developer">Android Developer</option>
+        <option value="Graphics Designer">Graphics Designer</option>
+        <option value="Content Creator">Content Creator</option>
+        <option value="Video Editor">Video Editor</option>
+        <option value="Social Media Manager">Social Media Manager</option>
+        <option value="Other">Other - Please Specify</option>
+    </select>
+</div>
 
-                    <div class="form-group">
-                        <label for="skills">Primary Expertise / Interest</label>
-                        <select id="skills" name="skills" required>
-                            <option value="" disabled selected>Select Area</option>
-                            <option value="Web Development">Web Development</option>
-                            <option value="Robotics & STEM">Robotics & STEM</option>
-                            <option value="Mobile App Dev">Mobile App Development</option>
-                            <option value="Graphic Design">Graphic Design / Content</option>
-                            <option value="Mentorship & Coaching">Mentorship & Coaching</option>
-                            <option value="General Support">General Support / Other</option>
-                        </select>
-                    </div>
+<div class="form-group" id="otherRoleGroup" hidden>
+    <label for="otherRole">Specify Your Role</label>
+    <input
+        type="text"
+        id="otherRole"
+        name="otherRole"
+        placeholder="Enter your preferred volunteer role"
+    >
+</div>
+
 
                     <div class="form-group">
                         <label for="availability">Availability</label>

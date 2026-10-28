@@ -237,3 +237,28 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 });
+
+document.addEventListener("DOMContentLoaded", function () {
+    const roleSelect = document.getElementById("role");
+    const otherRoleGroup = document.getElementById("otherRoleGroup");
+    const otherRoleInput = document.getElementById("otherRole");
+
+    if (!roleSelect || !otherRoleGroup || !otherRoleInput) return;
+
+    function updateOtherRole() {
+        const isOther = roleSelect.value === "Other";
+
+        otherRoleGroup.hidden = !isOther;
+        otherRoleGroup.style.display = isOther ? "" : "none";
+        otherRoleInput.required = isOther;
+
+        if (isOther) {
+            otherRoleInput.focus();
+        } else {
+            otherRoleInput.value = "";
+        }
+    }
+
+    roleSelect.addEventListener("change", updateOtherRole);
+    updateOtherRole();
+});
