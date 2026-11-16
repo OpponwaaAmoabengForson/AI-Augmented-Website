@@ -262,3 +262,56 @@ document.addEventListener("DOMContentLoaded", function () {
     roleSelect.addEventListener("change", updateOtherRole);
     updateOtherRole();
 });
+
+/* AKILI FOUNDATION — VOLUNTEER APPLICATION FORM */
+
+document.addEventListener("DOMContentLoaded", function () {
+    const volunteerForm = document.getElementById("volunteer-form");
+
+    if (!volunteerForm) return;
+
+    const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbw0Be81qCI_O_9MkJMH9YQ7Zqq1SGdW7XWx08udgDgyWCY5RhCafUPGAVrgUXW_Onrt/exec";
+
+    volunteerForm.addEventListener("submit", async function (event) {
+        event.preventDefault();
+
+        const submitButton = volunteerForm.querySelector(
+            'button[type="submit"]'
+        );
+
+        submitButton.disabled = true;
+        submitButton.textContent = "Submitting...";
+
+        try {
+            const formData = new FormData(volunteerForm);
+
+            await fetch(SCRIPT_URL, {
+                method: "POST",
+                body: new URLSearchParams(formData),
+                mode: "no-cors"
+            });
+
+            alert(
+                "Your application was sent. Please contact us if you do not receive confirmation."
+            );
+
+            volunteerForm.reset();
+
+            const otherRoleGroup = document.getElementById("otherRoleGroup");
+            if (otherRoleGroup) {
+                otherRoleGroup.hidden = true;
+            }
+
+        } catch (error) {
+            console.error("Volunteer submission error:", error);
+
+            alert(
+                "We could not send your application. Please try again."
+            );
+
+        } finally {
+            submitButton.disabled = false;
+            submitButton.textContent = "Submit Application";
+        }
+    });
+});
